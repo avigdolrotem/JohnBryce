@@ -4,8 +4,6 @@ terraform {
       source  = "hashicorp/aws"
       version = "5.83.1"
     }
-
-
   }
   backend "s3" {
     bucket  = "tfstate-prod-jb-us-east-1-504949722475"
@@ -16,9 +14,7 @@ terraform {
 }
 
 provider "aws" {
-  region     = "us-east-1"
-  access_key = ""
-  secret_key = ""
+  region = "us-east-1"
 }
 
 # terraform init
