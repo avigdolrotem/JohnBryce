@@ -16,3 +16,15 @@ resource "aws_instance" "this" {
     Name = "MyEC2Instance"
   }
 }
+
+module "security_group" {
+  source = "./security_group"
+
+  sg_name              = "demo-sg"
+  sg_description       = "Demo Security Group"
+  sg_tags              = {
+    Name        = "Demo-SG"
+    ManagedBy   = "Terraform"
+  }
+}
+

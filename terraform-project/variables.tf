@@ -10,7 +10,7 @@ variable "instance_count" {
 variable "instance_type" {
   type        = string
   description = "The type of instance to create"
-  default     = "t2.micro"    # Default instance type 
+  default     = "t3.micro"
 }
 variable "ami_id" {
   type        = string
@@ -19,7 +19,7 @@ variable "ami_id" {
 variable "availability_zone" {
   type        = string
   description = "The availability zone to launch the instance in"
-  default     = "us-east-1a"  # Default availability zone
+  default     = "us-east-1a"
 }
 variable "subnet_id" {
   type        = string
@@ -28,12 +28,12 @@ variable "subnet_id" {
 variable "root_volume_size" {
   type        = number
   description = "The size of the root volume in GB"
-  default     = 50  # Default root volume size
+  default     = 30
 }
 variable "root_volume_type" {
   type        = string
   description = "The type of the root volume"
-  default     = "gp3"  # Default root volume type
+  default     = "gp3" 
 }
 variable "tags" {
   type        = map(string)
