@@ -15,12 +15,13 @@ terraform {
 
 provider "aws" {
   region = "us-east-1"
+  access_key = "AKIAIOSFODNN7EXAMPLE"
+  secret_key = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY" 
+  default_tags {
+    tags = {
+      Environment = "Production"
+      ManagedBy   = "Terraform" 
+      Project     = "DemoProject"
+      }
+  }
 }
-
-# terraform init
-# terraform plan
-# terraform apply
-# terraform destroy
-
-# In class: Create your own Bucket and KeyPair
-# Self Account - VPC, Bucket,KeyPair

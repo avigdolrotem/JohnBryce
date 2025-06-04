@@ -33,7 +33,7 @@ variable "ingress_from_port" {
 
 variable "ingress_to_port" {
   type = number
-  default = 80
+  default = 0
   description = "Default To port"
 }
 
@@ -43,6 +43,17 @@ variable "ingress_ip_protocol" {
   description = "Default IP protocol"
 }
 
+variable "egress_from_port" {
+  type = number
+  default = 0
+  description = "Default From port for egress rules"
+}
+
+variable "egress_to_port" {
+  type = number
+  default = 0
+  description = "Default To port for egress rules"
+}
 variable "egress_ip_protocol" {
   type = string
   default = "-1"
@@ -59,9 +70,4 @@ variable "vpc_name" {
   type = string
   default = "jb-aws-vpc-vpc"
   description = "Name of VPC to draw information from"
-}
-
-variable "key_pair_name" {
-  type        = string
-  description = "The name of the key pair to use for the instance"
 }
