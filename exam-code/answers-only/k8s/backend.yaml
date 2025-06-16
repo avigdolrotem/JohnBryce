@@ -15,7 +15,7 @@ spec:
         app: backend
     spec:
       containers:
-      - name: backend
+      - name: crypto-backend
         image: avigdol/crypto-app:backend
         ports:
         - containerPort: 5001
