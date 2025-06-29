@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  labels:
+    app: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: crypto-backend
+        image: avigdol/crypto-app:backend
+        ports:
+        - containerPort: 5001
+        env:
+        - name: MYSQL_HOST
+          value: "mysql-service"
+        - name: MYSQL_user
+          value: "root"
+        - name: MYSQL_PASSWORD
+          value: "123456"
+        imagePullPolicy: IfNotPresent
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+spec:
+  selector:
+    app: backend
+  ports:
+    - protocol: TCP
+      port: 5001
+      targetPort: 5001
+  type: ClusterIP
