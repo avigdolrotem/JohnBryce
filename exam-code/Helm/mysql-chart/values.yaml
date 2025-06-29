@@ -1,0 +1,16 @@
+replicaCount: 1
+containerName: mysql
+
+image:
+  repository: mysql
+  pullPolicy: IfNotPresent
+  tag: "5.7"
+
+service:
+  name: mysql-service
+  type: ClusterIP
+  port: 3306
+
+env:
+  mysql_root_password: 123456
+  mysql_database: crypto_db

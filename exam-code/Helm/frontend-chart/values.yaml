@@ -1,0 +1,12 @@
+replicaCount: 2
+containerName: crypto-frontend
+
+image:
+  repository: avigdol/crypto-app
+  pullPolicy: IfNotPresent
+  tag: "frontend"
+
+service:
+  name: frontend-service
+  type: LoadBalancer
+  port: 5002

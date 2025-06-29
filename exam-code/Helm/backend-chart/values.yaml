@@ -1,0 +1,18 @@
+replicaCount: 2
+containerName: crypto-backend
+
+image:
+  repository: avigdol/crypto-app
+  pullPolicy: IfNotPresent
+  tag: "backend"
+
+service:
+  name: backend-service
+  type: ClusterIP
+  port: 5001
+
+env:
+  mysql_host: mysql-service
+  mysql_user: root
+  mysql_password: 123456
+  mysql_database: crypto_db
